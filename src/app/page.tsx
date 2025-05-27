@@ -1,40 +1,63 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-  <main className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4">
-      <header className="absolute top-4 left-4 flex items-center space-x-2">
-        <div className="rounded-full bg-white p-1 text-black font-bold text-sm">☻</div>
-        <span className="text-sm">Yash Bhagat</span>
-      </header>
-
-      <nav className="absolute top-4 right-4 space-x-6 text-sm">
-        <a href="#about" className="hover:underline">About</a>
-        <a href="#linkedin" className="hover:underline">LinkedIn</a>
-      </nav>
-
-      <div className="flex flex-col items-center text-center space-y-4 mt-10">
-        <div className="w-24 h-24 overflow-hidden rounded-2xl border border-white/20 shadow-lg">
-          <Image
-            src="/profile.jpg" // ← Add this image in `public/profile.jpg`
-            alt="Profile"
-            width={96}
-            height={96}
-            className="object-cover"
-          />
-        </div>
-
-        <h1 className="text-2xl sm:text-3xl font-medium">
-          Product Designer driven by curiosity, intuition,<br/>
-          and just the right amount of overthinking.
-        </h1>
-
-        <p className="text-gray-400 max-w-md text-sm">
-          Designed for lending and payments at <a href="#" className="underline">slice</a>. 
-          Previously at <a href="#" className="underline">CRED</a> & <a href="#" className="underline">PepperContent</a>.<br/>
-          Alumnus BITS Pilani '21. Based in Bangalore, India.
-        </p>
+    <>
+      <div id="loader">
+        <div className="nb-spinner"></div>
       </div>
-    </main>
+      <div id="desktop">
+        <div id="head">
+          <div id="name" style={{ display: "inline-block" }}>
+            <a href=".">Nivaz</a>
+          </div>
+          <ul className="navigation">
+            <li className="nav-item">
+              <a href="/" className="checkmark">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/art" className="checkmark">
+                Art
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="/about"
+                className="checkmark"
+                style={{ color: "var(--link-color2)" }}
+              >
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/Yash_Bhagat_Resume.pdf">Resume</a>
+            </li>
+          </ul>
+        </div>
+        <div className="main">
+          <div className="home dummyanim" id="one">
+            <div className="grid-container">
+              <div className="grid-item">
+                <div className="heading">
+                  Hi, I'm{" "}
+                  <span style={{ color: "var(--link-color2)" }}>Yash</span>
+                  <div className="wave"></div>
+                  <br /> I craft digital experiences.
+                </div>
+                <div id="designation">
+                  Product Designer based in India. Passionate about creating
+                  delightful products.
+                </div>
+              </div>
+            </div>
+            {/* Add portfolio/work sections here */}
+          </div>
+          {/* Add more sections as in your HTML */}
+        </div>
+        <div id="footer">
+          <div id="copyright">© Yash Bhagat</div>
+        </div>
+      </div>
+    </>
   );
 }
